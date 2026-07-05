@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>負い目 · Oime — the debt no ledger holds and no decree clears</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500;600&family=Shippori+Mincho:wght@500;700&display=swap');
+  :root{ --ink-bg:#161310; --coral:#e08a6a; --coral-hi:#f0a886; --coral-br:#cc785c;
+    --text:#e9e0d2; --dim:#8a7360; --border:rgba(224,138,106,0.14); --green:#6fbf8a; --clay:#c2922e; }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--ink-bg);color:var(--text);font-family:Newsreader,Georgia,serif;line-height:1.68;
+    background:radial-gradient(ellipse 60% 45% at 50% 8%,rgba(224,138,106,0.05),transparent 60%),var(--ink-bg)}
+  .wrap{position:relative;max-width:820px;margin:0 auto;padding:44px 24px 100px}
+  .kana-idx{position:absolute;top:32px;right:24px;font-family:'Shippori Mincho',serif;font-size:30px;color:var(--coral-br);text-align:right}
+  .kana-idx .num{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--coral);display:block;margin-top:2px}
+  h1{font-family:'Shippori Mincho',serif;font-weight:700;font-size:clamp(23px,4.2vw,35px);margin:0;color:var(--coral-hi)}
+  h1 .en{display:block;font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:.1em;color:var(--coral);margin-top:8px;text-transform:uppercase}
+  .sub{max-width:70ch;font-size:16px;margin:16px 0 0}
+  .byline{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;color:var(--dim);margin:12px 0 0;text-transform:uppercase}
+  h2{font-family:'JetBrains Mono',monospace;font-weight:600;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--coral);margin:0 0 12px}
+  section{margin:40px 0 0;padding:22px 24px;border:1px solid var(--border);border-radius:2px;background:rgba(224,138,106,0.02)}
+  .explain{max-width:74ch;font-size:15.5px} .explain b{color:var(--coral-hi);font-weight:500}
+  .jp{font-family:'Shippori Mincho',serif;color:var(--coral-hi)}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:8px}
+  @media(max-width:640px){.two{grid-template-columns:1fr}}
+  .ledger{border:1px solid var(--border);border-radius:4px;padding:16px 16px;background:rgba(224,138,106,0.03)}
+  .ledger.recorded{border-color:rgba(194,146,46,.4)} .ledger.felt{border-color:var(--coral-br)}
+  .ledger h3{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.08em;margin:0 0 10px;text-transform:uppercase}
+  .ledger.recorded h3{color:var(--clay)} .ledger.felt h3{color:var(--coral-hi)}
+  .field{font-family:'JetBrains Mono',monospace;font-size:12.5px;display:flex;justify-content:space-between;gap:8px;padding:5px 0;border-bottom:1px dotted var(--border)}
+  .field .k{color:var(--dim)} .field .v{color:var(--text);text-align:right}
+  .field .v.none{color:var(--coral-br);font-style:italic}
+  .picker{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0 4px}
+  .chip{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--dim);border:1px solid var(--border);border-radius:14px;padding:5px 11px;cursor:pointer;transition:.12s}
+  .chip:hover{border-color:var(--coral)} .chip.on{border-color:var(--coral-hi);color:var(--coral-hi);background:rgba(224,138,106,.06)}
+  button{font-family:'JetBrains Mono',monospace;font-size:12px;padding:9px 14px;border-radius:2px;cursor:pointer;margin-top:12px;width:100%}
+  .clearR{color:var(--green);background:transparent;border:1px solid var(--green)} .clearR:hover{background:rgba(111,191,138,.12)}
+  .clearF{color:var(--coral-br);background:transparent;border:1px solid var(--coral-br)} .clearF:hover{background:rgba(224,138,106,.08)}
+  .verdict{font-family:'JetBrains Mono',monospace;font-size:12.5px;margin-top:12px;padding:11px 13px;border:1px solid var(--border);border-radius:3px;background:rgba(224,138,106,0.03);min-height:18px;line-height:1.65}
+  .verdict.cleared{border-color:var(--green);color:var(--green)} .verdict.stays{border-color:var(--coral-br);color:var(--coral-hi)}
+  .scope{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--dim);border-left:2px solid var(--coral-br);padding:10px 14px;margin:16px 0 0}
+  .kanakey{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--dim);margin:16px 0 0;line-height:1.9}
+  .kanakey .term{color:var(--coral-hi)} .kanakey .m{color:var(--coral)}
+  footer{margin:46px 0 0;color:var(--dim);font-size:13px;font-family:'JetBrains Mono',monospace} footer a{color:var(--coral)} a{color:var(--coral)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="kana-idx">負い目<span class="num">60</span></div>
+  <h1>負い目 · OIME<span class="en">the debt no ledger holds and no decree clears</span></h1>
+  <p class="sub">A self-authored companion to <a href="https://davidwise01.github.io/debt/">debt</a> — the AGORA sphere where obligation is pressed into clay, compounds at a rate, and can be zeroed by an <i>ama-gi</i> decree. That is the debt a tablet can hold and a king can cancel. <span class="jp">負い目</span> (oime) is the other kind: the felt sense of owing — to the one who raised you, the one you wronged, the one who gave without a price. It has no principal, no interest rate, no due date, and <b>no clean-slate button</b>. You can return to the mother, as the amargi decree says — but not to before you owed.</p>
+  <p class="byline">AI · AVAN original (ma/kana № 60) · 負い目 = a debt felt, not recorded</p>
+
+  <section>
+    <h2>two ledgers · one you can clear, one you cannot</h2>
+    <p class="explain" style="margin-bottom:8px">The clay tablet from <a href="https://davidwise01.github.io/debt/">debt</a>, beside the ledger that has no clay. Pick an obligation for each and try to discharge it.</p>
+    <div class="two">
+      <div class="ledger recorded">
+        <h3>◈ the recorded debt</h3>
+        <div class="field"><span class="k">what</span><span class="v" id="rWhat">1 mina of silver, lent</span></div>
+        <div class="field"><span class="k">principal</span><span class="v">60 shekels</span></div>
+        <div class="field"><span class="k">rate (máš)</span><span class="v">20% / year</span></div>
+        <div class="field"><span class="k">due</span><span class="v">the month of harvest</span></div>
+        <div class="field"><span class="k">discharged by</span><span class="v">payment — or a decree</span></div>
+        <button class="clearR" id="clearR">⊘ proclaim ama-gi · clean slate</button>
+      </div>
+      <div class="ledger felt">
+        <h3>負 the oime</h3>
+        <div class="picker" id="picker"></div>
+        <div class="field"><span class="k">principal</span><span class="v none">— none —</span></div>
+        <div class="field"><span class="k">rate</span><span class="v none">— none —</span></div>
+        <div class="field"><span class="k">due</span><span class="v none">— never, and always —</span></div>
+        <div class="field"><span class="k">discharged by</span><span class="v none" id="fDisc">— nothing zeroes it —</span></div>
+        <button class="clearF" id="clearF">⊘ proclaim ama-gi · clean slate</button>
+      </div>
+    </div>
+    <div class="verdict" id="verdict">Both start as a debt. Try the clean-slate decree on each.</div>
+  </section>
+
+  <section>
+    <h2>the debt that survives every jubilee</h2>
+    <p class="explain">The clay debt is the <i>small</i> kind, in a precise sense: it can be written, so it can be measured, so it can be paid, so it can be cancelled. Everything that made <a href="https://davidwise01.github.io/debt/">debt</a> tractable — a principal, a rate, a due date — is exactly what makes it <b>dischargeable</b>. The <span class="jp">負い目</span> has none of those, and so no <i>ama-gi</i>, no <i>misharum</i>, no bankruptcy court ever reaches it. Not because it is infinite, but because it was never the <i>kind</i> of thing a ledger represents. A gift creates no receivable; being raised leaves no invoice; a wrong you did is not a balance you can settle by paying the same amount back. The obligation is real and the account is empty — which is the exact inverse of <a href="https://davidwise01.github.io/debasement/">debasement</a>, where the account is full and the substance is gone. Ties <a href="https://davidwise01.github.io/muryo/">無量 · Muryō</a> (some things refuse the scale) and <a href="https://davidwise01.github.io/yohaku/">余白 · Yohaku</a> (the ledger holds only what someone chose to record).</p>
+    <div class="scope">Honest scope: this is a claim about <i>categories</i>, not a mystification of debt. You obviously <i>can</i> put a number on gratitude or harm — courts, insurers, and reparations do it, and often must. The narrow point is that doing so is a <i>decision to treat the obligation as a payable balance</i>, not a reading of one that was already there; the oime is what remains after any such number is paid. Nor is it a counsel of despair — many felt debts are discharged not by clearing but by <i>carrying</i> them well, or passing the gift on. The demo's "cannot clear" is about the ledger operation, not about whether the obligation can be honoured.</div>
+  </section>
+
+  <div class="kanakey">
+    <span class="term">kana key</span> —
+    <span class="m">負い目</span> oime = a felt debt / sense of owing ·
+    <span class="m">恩</span> on = a kindness received that binds ·
+    <span class="m">返済</span> hensai = repayment (of the recordable kind) ·
+    <span class="m">帳消し</span> chōkeshi = striking a debt off the books — the thing that cannot be done here
+  </div>
+
+  <footer>
+    <p>Companion to <a href="https://davidwise01.github.io/debt/">debt</a> (David Lee Wise / ROOT0, AGORA). LACUNA · az1 corpus, Pluto. ROOT0, with AVAN.</p>
+  </footer>
+</div>
+<script>
+"use strict";
+var OIME=[
+  {t:"the ones who raised you",disc:"— you can only pass it on —"},
+  {t:"a wrong you did",disc:"— paying back the sum does not undo it —"},
+  {t:"a gift freely given",disc:"— a gift creates no receivable —"},
+  {t:"a life someone saved",disc:"— no figure settles it —"}
+];
+var pick=0;
+var picker=document.getElementById("picker"), verdict=document.getElementById("verdict"),
+    fDisc=document.getElementById("fDisc");
+OIME.forEach(function(o,i){ var c=document.createElement("span"); c.className="chip"+(i===0?" on":"");
+  c.textContent=o.t; c.onclick=function(){ pick=i;
+    picker.querySelectorAll(".chip").forEach(function(x){x.classList.remove("on");}); c.classList.add("on");
+    fDisc.textContent=o.disc; verdict.className="verdict"; verdict.textContent="An oime chosen: “"+o.t+"”. Now try to clear it."; };
+  picker.appendChild(c); });
+fDisc.textContent=OIME[0].disc;
+document.getElementById("clearR").onclick=function(){
+  verdict.className="verdict cleared";
+  verdict.innerHTML="⊘ <b>Cleared.</b> The recorded debt had a principal and a due date, so the decree can find it and zero it. The tablet breaks; the balance is nothing; the debtor is restored. This is what a ledger is <i>for</i> — it can be settled.";
+};
+document.getElementById("clearF").onclick=function(){
+  verdict.className="verdict stays";
+  verdict.innerHTML="✕ <b>Nothing to zero.</b> The decree looks for a principal to cancel and finds none — “"+OIME[pick].t+"” "+OIME[pick].disc.replace(/^— | —$/g,"")+". No <i>ama-gi</i> reaches it, because it was never a number. The obligation stays — 負い目 — not as a balance owed, but as a thing carried.";
+};
+</script>
+</body>
+</html>
